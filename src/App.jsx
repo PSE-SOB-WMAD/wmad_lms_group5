@@ -10,6 +10,8 @@ import NotFoundPage from "./pages/NotFoundPage";
 import CreateUserAccountListPage from "./pages/UserAcc/CreatUserAccountListPage"
 import AppLayout from "./components/AppLayout";
 import MemberPage from "./pages/member/MemberPage";
+import ViewBookCatalog from "./pages/bookCatalog/View-bookCatalog";
+
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
         <Route path="/book-catalog" element={<BookCatalogPage />} />
         <Route path="/book-issue" element={<BookIssuePage />} />
         <Route path="/member" element={<MemberPage />} />
+        <Route path="/book-catalog/:id" element={<ViewBookCatalog />} />
+     
+
       </Route>
     </Routes>
     
