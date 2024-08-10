@@ -7,3 +7,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+Button.button-blue{
+  background-color: blue;
+}
+
+Button.button-blue:hover{
+  background-color: rgb(1, 68, 170);
+}
+Button.button-red{
+  background-color: rgb(255, 0, 0);
+}
+
+Button.button-red:hover{
+  background-color: rgb(170, 1, 1);
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Button from "../../components/ButtonMember";
 
 function ViewBookCatalog() {
   const [members, setData] = useState({});
@@ -47,21 +48,24 @@ function ViewBookCatalog() {
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Member Information</h1>
 
-      <div className="flex mt-4 py-4">
-        <button className="bg-gray-500 text-white py-2 px-5 rounded-lg mr-4"
-        onClick={() => navigate("/member")}>
-          Back
-        </button>
-
-        <button className="bg-blue-500 text-white py-2 px-5 rounded-lg mr-4">
-          Update
-        </button>
-        <button
-          onClick={() => handleDelete(members.id)}
-          className="bg-red-500 text-white py-2 px-5 rounded-lg"
-        >
-          Delete
-        </button>
+      <div className="flex mt-4 py-4 gap-9">
+      
+        <Button 
+        text="Back" 
+     
+        onClick={() => navigate("/member")}
+      />
+       <Button 
+        text="update" 
+        type='button-blue'
+      />
+      
+        <Button 
+        text="Delete" 
+        type='button-red'
+        onClick={() =>handleDelete(members.id)}
+      />
+        
       </div>
       <div className="bg-white shadow rounded-lg overflow-hidden">
         <table className="min-w-full bg-white border-b">

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; 
 import { getMember } from '../../api/MemberApi';
+import Button from '../../components/ButtonMember';
 
 const MembersPage = () => {
   const [members, setMembers] = useState([]);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchMembers = async () => {
@@ -22,10 +24,11 @@ const MembersPage = () => {
   return (
     <div className="container mx-auto">
       <h1 className="text-3xl font-bold pb-5">Members</h1>
-
-      <button
-       className="bg-blue-500 text-white px-6 py-2 mb-4 rounded-lg">
-        <Link to={`/Create-member/${members}`}>Create</Link></button>
+      <Button 
+        text="Back" 
+        type="button-blue"
+        onClick={() => navigate(`/Create-member/${members}`)}
+      />
 
       <div className="overflow-hidden rounded-xl border border-gray-500">
         <table className="min-w-full bg-white border-b">
@@ -63,7 +66,6 @@ const MembersPage = () => {
         </table>
       </div>
     </div>
-
   );
 };
 

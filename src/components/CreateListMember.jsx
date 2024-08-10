@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import Button from "./ButtonMember";
 
 function CreateMember() {
   const [firstname, setFirstName] = useState("");
@@ -120,19 +121,16 @@ function CreateMember() {
         />
 
         <div className="gap-4 flex">
-          <button
-            type="button"
-            className="bg-gray-400 text-white px-8 py-2 mb-4 rounded-lg"
+          <Button
+            text="Cancel"
             onClick={() => navigate("/member")}
           >
-            Cancel
-          </button>
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-6 py-2 mb-4 rounded-lg"
-          >
-            Submit
-          </button>
+            
+          </Button>
+          <Button 
+        text="Save" 
+        type='button-blue'
+      />
         </div>
       </form>
     </div>
